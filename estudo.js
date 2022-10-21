@@ -22,35 +22,54 @@ function mostraLista(){
     } 
 }
 
-
 function multiplica(){
     for(let i = 6; i <= 8; i++){
         document,write("o valor do i = " + i + "<br>");
         for(let j = 1; j <= 10; j++){
             document.write(i + " x "+j+" = " + (i*j) + "<br>");
         }
-        
+        document.write("<br>");
     }
 }
-
+function moeda(atual){
+    return atual.toLocaleString('pt-br',{style: 'currency', currency: 'BRL'});
+}
 function total(){
     let v = document.getElementById("valor").value;
     let j = document.getElementById("juros").value;
     let t = document.getElementById("meses").value;
-    let r = 0;
-    for(let i=1; i <= t;i++){
-        r = v * (1+(j/100));
-        v = r;   
-     }
-    document.write("Resultado: R$ " + r);
-}
-function media(){
-    let n1 = document.getElementById ("n1").value;
-    let n1 = document.getElementById ("n2").value;
-    let n1 = document.getElementById ("n3").value;
-    let n1 = document.getElementById ("n4").value;
-
-    let r = (Number (n1)+Number(n2)+Number (n3)+Number(n4))/4;
-    document.getElementById("result").innerHTML = "Média: " + r;
     
+    if(!Number(v)){
+        alert("O valor deve ser numérico");
+        document.getElementById("valor").value = "";
+        document.getElementById("valor").focus();
+        return
+    }
+    
+    if(!Number(v)){
+        alert("O valor deve ser numérico");
+        document.getElementById("valor").value = "";
+        document.getElementById("valor").focus();
+        return
+     }
+     if(!Number(j)){
+        alert("Os juros deve ser numérico");
+        document.getElementById("juros").value = "";
+        document.getElementById("juros").focus();
+        return
+     }
+     if(!Number(m)){
+        alert("O valor do mes deve ser numérico");
+        document.getElementById("valor").value = "";
+        document.getElementById("valor").focus();
+        return
+
+     let r = 0;
+     for(let i=1; i <= t;i++){
+         r = v * (1+(j/100));
+         document.write("mes " + "valor:" + moeda(r) + "<br>");
+         v = r;
+     }
+    document.write("Resultado: " + moeda(r));
+
 }
