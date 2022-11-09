@@ -47,8 +47,8 @@ let tabuada = 111;
      } 
   
      if(!Number(v)){ 
-         alert("O valor deve ser numérico."); 
-         document.getElementById("valor").value = ""; 
+         alert("O valor deve ser numérico."); 
+         document.getElementById("valor").value = ""; 
          document.getElementById("valor").focus(); 
          return 
      } 
@@ -72,6 +72,25 @@ let tabuada = 111;
           v = r; 
      }
     document.getElementById("mes").innerHTML=texto;
-    document.getElementById("totalGeral").innerHTML="total:"+moeda(r);  
+    document.getElementById("totalGeral").innerHTML="total:"+moeda(r);
  }
+function calculaRaiz(){
+    let a = document.getElementById("a").value;
+    let b = document.getElementById("b").value;
+    let c = document.getElementById("c").value;
+    //ax2 + bx + c = 0
+
+    let delta = (b*b) - (4*a*c);
+    if (delta < 0){
+        document.getElementById("raiz").innerHTML = ("Não possui raiz real")
+    } else if (delta == 0){
+        let x1 = (-b)/(2*a);
+        document.getElementById("raiz").innerHTML = ("x1 = x2 = " + x1);
+    } else {
+        let x1 = ((-b) + Math.sqrt(delta))/(2*a);
+        let x2 = ((-b) - Math.sqrt(delta))/(2*a);
+        document.getElementById("raiz").innerHTML = "x1 = " + x1 + " x2 = " + x2;
+    }
+
+}
 
