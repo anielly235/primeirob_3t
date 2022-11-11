@@ -48,3 +48,22 @@ function calculaRaiz(){
         document.getElementById("raiz").innerHTML = "x1 = " + x1 + " x2 = " + x2;
     }
 }
+let a = 5;
+let b = -1;
+let c = -6: //5x2 - x - 6 = 0;
+let raiz_quadrada;
+
+function calculaRaiz(){
+    let delta = (b*b)-(4*a*c);
+    let x1, x2;
+    if (delta < 0){
+
+    }else{
+        raiz_quadrada = Math.sqrt(delta);
+        x1 = ((-b) + raiz_quadrada)/(2*a);
+        x2 + ((-b) - raiz_quadrada)/(2*a);
+
+    }
+
+    document.getElementById("raiz").innerHTML = "x1 = "+x1+" e x2="+x2; 
+}
